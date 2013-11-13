@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Chaplin Boilerplate Application</title>
+  <style>body { font-family: sans-serif; }</style>
+  <script src="static/vendor/requirejs/require.js"></script>
+
+ <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-theme.min.css">
+  <!-- Latest compiled and minified JavaScript -->
+  <script>
+  // Configure the AMD module loader
+  requirejs.config({
+    // The path where your JavaScripts are located
+    baseUrl: './static/js/',
+    // Specify the paths of vendor libraries
+    paths: {
+      jquery: '../vendor/jquery/jquery',
+      underscore: '../vendor/lodash/dist/lodash',
+      backbone: '../vendor/backbone/backbone',
+      handlebars: '../vendor/handlebars/handlebars',
+      text: '../vendor/requirejs-text/text',
+      chaplin: '../vendor/chaplin/chaplin',
+      "bootstrap": "../vendor/bootstrap.min",
+    },
+    // Underscore and Backbone are not AMD-capable per default,
+    // so we need to use the AMD wrapping of RequireJS
+    shim: {
+      underscore: {
+        exports: '_'
+      },
+      backbone: {
+        deps: ['underscore', 'jquery'],
+        exports: 'Backbone'
+      },
+      handlebars: {
+        exports: 'Handlebars'
+      },
+      "bootstrap": { deps: ["jquery"], exports:'bootstrap'}
+    }
+    // For easier development, disable browser caching
+    // Of course, this should be removed in a production environment
+    //, urlArgs: 'bust=' +  (new Date()).getTime()
+  });
+
+  // Bootstrap the application
+  require(['application', 'routes'], function(Application, routes) {
+    new Application({routes: routes, controllerSuffix: '-controller'});
+  });
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

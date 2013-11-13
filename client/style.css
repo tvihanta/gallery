@@ -1,0 +1,9 @@
+html, body, h1,h2,h3,h4,h4,a{
+	font-family: 'Cabin', sans-serif !important;	
+}
+#content{
+	padding: 0 15px;
+}
+.image{
+	margin: 10px;
+}

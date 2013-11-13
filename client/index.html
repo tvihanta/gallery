@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Gallery 1.2</title>
+  <script src="bower_components/requirejs/require.js"></script>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-theme.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Cabin:400,700,400italic' rel='stylesheet' type='text/css'>
+  <link href="bower_components/isotope/css/style.css" rel="stylesheet" type="text/css"/>
+  <link href="style.css" rel="stylesheet" type="text/css"/>
+
+  <script>
+  // Configure the AMD module loader
+  requirejs.config({
+    // The path where your JavaScripts are located
+    baseUrl: './js/',
+    // Specify the paths of vendor libraries
+    paths: {
+      jquery: '../bower_components/jquery/jquery',
+      underscore: '../bower_components/lodash/dist/lodash',
+      backbone: '../bower_components/backbone/backbone',
+      handlebars: '../bower_components/handlebars/handlebars',
+      text: '../bower_components/requirejs-text/text',
+      chaplin: '../bower_components/chaplin/chaplin',
+      bootstrap : '../bower_components/bootstrap.min',
+      isotope: '../bower_components/isotope/jquery.isotope.min',
+      perfectMasonry: 'bower_components/isotope/jquery.isotope.perfectmasonry.js'
+    },
+    // Underscore and Backbone are not AMD-capable per default,
+    // so we need to use the AMD wrapping of RequireJS
+    shim: {
+      underscore: {
+        exports: '_'
+      },
+      backbone: {
+        deps: ['underscore', 'jquery'],
+        exports: 'Backbone'
+      },
+      bootstrap: {
+        deps: [ 'jquery'],
+        exports: 'Bootstrap'
+      },
+      isotope: {
+        deps: [ 'jquery'],
+        exports: 'Isotope'
+      },
+      perfectMasonry:{
+        deps:['jquery', 'isotope'],
+        exports: 'perfetctMasonry'
+      },
+      handlebars: {
+        exports: 'Handlebars'
+      }
+    }
+    // For easier development, disable browser caching
+    // Of course, this should be removed in a production environment
+    //, urlArgs: 'bust=' +  (new Date()).getTime()
+  });
+
+  // Bootstrap the application
+  require(['application', 'routes'], function(Application, routes) {
+    new Application({routes: routes, controllerSuffix: '-controller' , root: '/galleryClient/'});
+  });
+  </script>
+</head>
+<body>
+  <div id="content">
+  </div>
+  <div id="popup"></div>
+</body>
+</html>
