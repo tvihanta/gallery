@@ -6,7 +6,7 @@ from flaskCrossdomainDecorator import crossdomain
 app = Flask(__name__)
 
 GALLERYFOLDER= 'galleries'
-ROOT= '/gallery/'
+ROOT= '/gallery/backend/'
 DOMAIN ="http://192.168.11.8"
 
 @app.route('/')
@@ -20,6 +20,7 @@ def list_galleries():
 	returndata = {"galleries": []}
 	for dirname, dirnames, filenames in os.walk(GALLERYFOLDER):
 	    for subdirname in dirnames:
+	    	print subdirname
 	        returndata['galleries'].append({
 	        	"name": subdirname
 	        	})

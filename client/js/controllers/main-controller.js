@@ -13,7 +13,7 @@ define([
       console.log(params);
       this.publishEvent("menu:setselected", params.name);
       this.collection = new GalleryImages();
-      this.collection.name =params.name;
+      this.collection.name = params.name;
 
       this.view = new galleryView({
           region: "main",

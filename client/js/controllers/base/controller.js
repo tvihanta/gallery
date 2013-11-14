@@ -9,7 +9,6 @@ define(['chaplin',
     // Place your application-specific controller features here.
     beforeAction: function() {
       this.compose('site', SiteView);
-  		
   		this.compose('side', SideView, {region:"side"});
     }
   });

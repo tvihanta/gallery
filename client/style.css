@@ -1,9 +1,68 @@
 html, body, h1,h2,h3,h4,h4,a{
 	font-family: 'Cabin', sans-serif !important;	
+
 }
+html, body{
+	background: #0E0E0E;
+	color: #fff;
+	font-size: 12px;
+	height: 100%;
+}
+#content, #site-container{	
+	height: 100%;
+}
+
+#side-container{
+	background: rgba(192, 57, 7,1);
+}
+
+#side-container a{
+	color: #fff;
+}
+
+
 #content{
 	padding: 0 15px;
 }
 .image{
 	margin: 10px;
+	border-radius: 2px;
+}
+
+.image .image-wrapper {
+	border-radius: 2px;
+	position: absolute;
+	top: 0;
+	left:0;
+	background: rgba(0,0,0,0.5);
+	height: 100%;
+	width: 100%;
+
+}
+
+.image .image-wrapper:hover {
+	background: rgba(0,0,0,0.0);
+}
+
+
+.image img{
+		width: 100px;
+		border-radius: 5px;
+	}
+
+.large-image .modal-body{
+	padding: 0px;
+}
+.large-image .modal-body img{
+	display: block;
+	max-height: 100%;
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+.nav-pills>li>a:hover, .nav-pills>li>a:focus {
+	color: #fff;
+	background-color: rgba(170, 52, 9, 1);
 }

@@ -13,12 +13,14 @@ define([
     listSelector: "#images",
     className: 'row',
     template: template,
+    loadingSelector: "#gallery-loader",
      initialize:function (options) {
         Gallery.__super__.initialize.apply(this, arguments);
         this.listenTo(this.collection, 'reset', function (coll, res, opts) {
           var $cont = this.$('#images');
+          var self = this;
           $cont.imagesLoaded( function(){
-                
+                $(self.loadingSelector).hide();
                 $cont.isotope({
                   // options
                   itemSelector : '.image',
@@ -31,6 +33,7 @@ define([
                   console.log("relayouted images");
                   });
           });
+
         });
     },
     attach:function(){
