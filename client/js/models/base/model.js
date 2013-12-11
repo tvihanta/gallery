@@ -4,7 +4,7 @@ define([
   'use strict';
 
   var Model = Chaplin.Model.extend({
-  	baseUrl : 'http://192.168.11.8:30085/'
+  	baseUrl : gallery.BaseUrl
     // Place your application-specific model features here
   });
 

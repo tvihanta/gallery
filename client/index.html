@@ -11,6 +11,11 @@
   <link href="style.css" rel="stylesheet" type="text/css"/>
 
   <script>
+  gallery = {
+      baseUrl: 'http://192.168.11.8/gallery/phpbackend/index.php/'
+
+  };
+
   // Configure the AMD module loader
   requirejs.config({
     // The path where your JavaScripts are located
@@ -60,7 +65,7 @@
 
   // Bootstrap the application
   require(['application', 'routes'], function(Application, routes) {
-    new Application({routes: routes, controllerSuffix: '-controller' , root: '/galleryClient/'});
+    new Application({routes: routes, controllerSuffix: '-controller' , root: '/gallery/client/'});
   });
   </script>
 </head>

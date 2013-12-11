@@ -1,3 +1,4 @@
 env
 *.pyc
 backend/galleries/*
+phpbackend/galleries/*

@@ -6,7 +6,7 @@ define([
 
   var Collection = Chaplin.Collection.extend({
     model: Model,
-    baseUrl : 'http://192.168.11.8:30085/'
+    baseUrl : gallery.baseUrl
     // Place your application-specific collection features here
   });
 
